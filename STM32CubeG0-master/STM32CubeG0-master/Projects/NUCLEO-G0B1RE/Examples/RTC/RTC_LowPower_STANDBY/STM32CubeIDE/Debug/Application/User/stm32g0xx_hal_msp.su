@@ -1,0 +1,3 @@
+E:/files/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/RTC/RTC_LowPower_STANDBY/Src/stm32g0xx_hal_msp.c:64:6:HAL_MspInit	16	static
+E:/files/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/RTC/RTC_LowPower_STANDBY/Src/stm32g0xx_hal_msp.c:90:6:HAL_RTC_MspInit	112	static
+E:/files/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/RTC/RTC_LowPower_STANDBY/Src/stm32g0xx_hal_msp.c:138:6:HAL_RTC_MspDeInit	16	static

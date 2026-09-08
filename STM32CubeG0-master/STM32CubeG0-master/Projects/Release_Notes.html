@@ -1,0 +1,2750 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Release Notes for Projects of STM32CubeG0 Firmware Package</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../_htmresc/mini-st_2020.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" type="image/x-icon" href="../_htmresc/favicon.png" />
+</head>
+<body>
+<div class="row">
+<div class="col-sm-12 col-lg-4">
+<center>
+<h1 id="release-notes-for-projects-of-stm32cubeg0-firmware-package">Release Notes for <mark>Projects of STM32CubeG0 Firmware Package</mark></h1>
+<p>Copyright © 2018 STMicroelectronics<br />
+</p>
+<a href="https://www.st.com" class="logo"><img src="../_htmresc/st_logo_2020.png" alt="ST logo" /></a>
+</center>
+<h1 id="purpose">Purpose</h1>
+<p>The projects are a set of applicative tasks that aim to explain and provide use cases of the different products features based on the products hardware (Boards, STM32 Core(s) features, interconnections and peripherals) and built around the different firmware components. They can be directly used or adapted by the STM32CubeG0 Firmware Package users. They provide basic functionalities, show main features or demonstrate performance. They are provided with preconfigured projects for the main supported toolchains.</p>
+<p>In the STM32CubeG0 Firmware Package, the projects are organized in a sequential scheme based on the following levels:</p>
+<ul>
+<li>Boards : Hardware platform (evaluation, discovery, nucleo boards)</li>
+<li>Project Category:
+<ul>
+<li>Applications</li>
+<li>Demonstrations</li>
+<li>Examples</li>
+<li>Examples_LL</li>
+<li>Examples_MIX</li>
+<li>Templates</li>
+<li>Templates_LL</li>
+</ul></li>
+<li>Project Class</li>
+<li>Project Subclass</li>
+</ul>
+<p>The Project Class refers to the main peripherals (drivers), middleware libraries or BSP classes while the projects Subclass stands for a project specific feature within a class.</p>
+<p>The exhaustive list of projects is provided in this table: <a href="STM32CubeProjectsList.html">STM32CubeProjectsList</a>.</p>
+<p>Here is the list of references to user documents:</p>
+<ul>
+<li><a href="https://www.st.com/resource/en/user_manual/DM00444670.pdf">UM2303</a> : Getting started with STM32CubeG0 firmware package for STM32G0xx series</li>
+<li><a href="https://www.st.com/resource/en/user_manual/DM00445691.pdf">UM2308</a> : STM32CubeG0 demonstration firmware for NUCLEO-G071RB</li>
+<li><a href="https://www.st.com/resource/en/user_manual/DM00452280.pdf">UM2321</a> : STM32CubeG0 demonstration firmware for STM32G081B-EVAL board</li>
+<li><a href="https://www.st.com/resource/en/user_manual/DM00595951.pdf">UM2546</a> : STM32CubeG0 demonstration firmware for STM32G071B-DISCO board</li>
+<li><a href="https://www.st.com/resource/en/user_manual/DM00610474.pdf">UM2568</a> : STM32CubeG0 demonstration firmware for STM32G0316-DISCO board</li>
+<li><a href="https://www.st.com/resource/en/user_manual/DM00734798.pdf">UM2776</a> : STM32CubeG0 demonstration firmware for STM32G0C1E-EV board</li>
+</ul>
+</div>
+<div class="col-sm-12 col-lg-8">
+<h1 id="update-history">Update History</h1>
+<div class="collapse">
+<input type="checkbox" id="collapse-section10" checked aria-hidden="true"> <label for="collapse-section10" aria-hidden="true">V1.6.3 / 27-February-2026</label>
+<div>
+<h2 id="main-changes">Main Changes</h2>
+<h3 id="patch-release">Patch release</h3>
+<ul>
+<li>NUCLEO-G070RB/NUCLEO-G071RB:
+<ul>
+<li>Fix typo and remove ambiguity from <strong>FreeRTOS_Mutexes</strong> application.</li>
+</ul></li>
+<li>STM32G081B-EVAL:
+<ul>
+<li>Update <strong>I2C_EEPROM</strong> example to be aligned with HAL_I2C_IsDeviceReady() API returned value: HAL_I2C_IsDeviceReady() API is no more returning HAL_TIMEOUT.</li>
+<li>Enable _GUI_INTERFACE in <strong>USB-PD_Consumer_1port</strong> application to be compliant with Cube Monitor.</li>
+<li>Fix typo and remove ambiguity from <strong>FreeRTOS_Mutexes</strong> application.</li>
+</ul></li>
+<li>STM32G0C1E-EV:
+<ul>
+<li>General fixes to support GCC in STM32CubeIDE projects.</li>
+<li>Modify the clock source for all <strong>FDCAN examples</strong> to use HSE instead of HSI.</li>
+</ul></li>
+</ul>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Device</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V8.50.9</td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V8.50.9</td>
+<td style="text-align: left;">G061xx/51xx/50xx</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td><strong>V5.38</strong></td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td><strong>V5.38</strong></td>
+<td style="text-align: left;">G061xx/51xx/50xx</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE</td>
+<td><strong>V1.19.0</strong></td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section9" aria-hidden="true"> <label for="collapse-section9" aria-hidden="true">V1.6.2 / 15-12-2023</label>
+<div>
+<h2 id="main-changes-1">Main Changes</h2>
+<h3 id="patch-release-1">Patch release</h3>
+<ul>
+<li>Update stm32g0xx_hal_timebase_tim.c to be aligned with hal_timebase_tim_template.c</li>
+<li>Update CRC LL examples to fix incorrect bytes stream handling.</li>
+<li>Update sysmem.c and syscall.c files in all STM32CubeIDE projects to support GCC11.</li>
+<li>Update STM32CubeIDE projects to fix the location of .size directive in startup code to allow proper size information of vector table.</li>
+<li>NUCLEO-G031K8 :
+<ul>
+<li>Update in CRC_Bytes_Stream_7bit_CRC example to fix STM32CubeIDE warning: Accessing 4 bytes in a region of size x [-Wstringop-overflow=].</li>
+</ul></li>
+<li>STM32G0C1E-EV :
+<ul>
+<li>Increase the size of the matrix _str in demo_application.c.</li>
+<li>Fix FLASH clear error programming flags that was not done properly before starting FLASH operations in OpenBootloader application.</li>
+</ul></li>
+</ul>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Device</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V8.50.9</td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V8.50.9</td>
+<td style="text-align: left;">G061xx/51xx/50xx</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td><strong>V5.38</strong></td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td><strong>V5.38</strong></td>
+<td style="text-align: left;">G061xx/51xx/50xx</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE</td>
+<td><strong>V1.14.0</strong></td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section8" aria-hidden="true"> <label for="collapse-section8" aria-hidden="true">V1.6.1 / 08-July-2022</label>
+<div>
+<h2 id="main-changes-2">Main Changes</h2>
+<h3 id="patch-release-2">Patch release</h3>
+<p>Update *ioc files to avoid “Firmware Location Error” popup message generated with STM32CubeMx.</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section7" aria-hidden="true"> <label for="collapse-section7" aria-hidden="true">V1.6.0 / 10-June-2022</label>
+<div>
+<h2 id="main-changes-3">Main Changes</h2>
+<h3 id="maintenance-release">Maintenance release</h3>
+<p>Maintenance release of STM32CubeG0 (STM32Cube for STM32G0 Series) Firmware projects supporting STM32G041xx/31xx/30xx and STM32G081xx/71xx/70xx devices.</p>
+<p>In the STM32CubeG0 MCU Package, examples and applications projects are generated with the STM32CubeMX tool to initialize the system, peripherals and middleware stacks. User can open the provided ioc file in STM32CubeMX to modify the settings, add additional peripherals and/or middleware, to build his final application.</p>
+<p><strong>Fixed bugs list</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Add .mxproject files on all firmware projects available in STM32CubeMX format (with .ioc) to fix project path issue during copy.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G071B-DISCO Demo: Add support for 20V PDO by default</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G0C1E-EV/USBPD_SOURCE_ID application: Fix Hard fault issue</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Upgrade USBPD projects to use new MW USBPD Library Core v4.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">General updates to be compliant with STM32CubeMx 6.6.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G071RB examples: Increment the FLASH user start address to avoid code overlap issue with STM32CubeIDE.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="warning"><strong>Warning</strong></h3>
+<p>For applications using device connected on CN7 (Type-C connector on MB1352):</p>
+<ul>
+<li><p>When the power source jumper JP24 is configured to D5V position (with this configuration the mother board is powered from the daughter board), there is no risk to get an over voltage on USB Vbus connector CN7.</p></li>
+<li><p>When the ST-Link is used as power source there is a risk to get an over voltage in connector. In such power configuration, software safety protection is required to detect the overvoltage.</p>
+<p>Please refer to /* SAFETY PROTECTION CODE BEGIN */ section in main.c of USB_Host applications.</p></li>
+</ul>
+<h2 id="contents">Contents</h2>
+<p><strong>STM32G0C1E-EV</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Examples_LL</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NUCLEO-G0B1RE</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>NUCLEO-G070RB</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>NUCLEO-G071RB</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>STM32G071B-DISCO</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>STM32G081B-EVAL</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>STM32G0316-DISCO</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>NUCLEO-G031K8</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations">Known Limitations</h2>
+<ul>
+<li>A few applications on STM32G0C1E-EV projects are not available at CubeMx format (with .ioc)</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Device</th>
+<th style="text-align: left;">Patch(if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V8.50.9</td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+<td style="text-align: left;"><a href="./Utilities/PC_Software/EWARMv8_STM32G0Bx_V0.2.zip">Patch EWARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V8.50.9</td>
+<td style="text-align: left;">G061xx/51xx/50xx</td>
+<td style="text-align: left;"><a href="./Utilities/PC_Software/EWARMv8_STM32G05x_V0.2.zip">Patch EWARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.31</td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+<td style="text-align: left;"><a href="./Utilities/PC_Software/Keil.STM32G0Bx_DFP.0.0.2.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.31</td>
+<td style="text-align: left;">G061xx/51xx/50xx</td>
+<td style="text-align: left;"><a href="./Utilities/PC_Software/Keil.STM32G05x_DFP.0.0.2.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE</td>
+<td>V1.7.0</td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-devices-and-boards">Supported Devices and boards</h2>
+<ul>
+<li>STM32G041xx, STM32G031xx and STM32G030xx devices</li>
+<li>STM32G081xx, STM32G071xx and STM32G070xx devices</li>
+<li>STM32G0C1xx, STM32G0B1xx and STM32G0B0xx devices</li>
+<li>STM32G0B1RE Nucleo kit (MB1360 C-01)</li>
+<li>STM32G071RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G070RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G0C1E Evaluation board RevA (MB1581 A-01)</li>
+<li>STM32G081B Evaluation board RevB (MB1350 B-01)</li>
+<li>STM32G081B/<strong>STM32G0B1RE</strong> Legacy daughter board RevA (MB1351 A-01)</li>
+<li>STM32G081B USBPD daughter board RevC (MB1352 C-01)</li>
+<li>STM32G071B Discovery kit RevC (MB1378 C-01)</li>
+<li>STM32G031K8 Nucleo32 kit (MB1455)</li>
+<li>STM32G0316 Discovery kit (MB1454)</li>
+</ul>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<p>This release is compatible with the previous versions</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>This projects release is compatible with:</p>
+<ul>
+<li>STM32CubeMX V6.6.0</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section6" aria-hidden="true"> <label for="collapse-section6" aria-hidden="true">V1.5.0 / 17-June-2021</label>
+<div>
+<h2 id="main-changes-4">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update">Maintenance release and Product Update</h3>
+<p>Official Release of STM32CubeG0 Firmware projects introducing <strong>STM32G0C1xx/B1xx/B0xx</strong> devices.</p>
+<p>Maintenance release of STM32CubeG0 (STM32Cube for STM32G0 Series) Firmware projects supporting STM32G041xx/31xx/30xx and STM32G081xx/71xx/70xx devices.</p>
+<p>In the STM32CubeG0 MCU Package, examples and applications projects are generated with the STM32CubeMX tool to initialize the system, peripherals and middleware stacks. User can open the provided ioc file in STM32CubeMX to modify the settings, add additional peripherals and/or middleware, to build his final application.</p>
+<p><strong>Fixed bugs list</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32G0C1E-EV/Applications/USB_Device/DFU_Standalone MDK-ARM-warnings.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CRS clock enable is called after config API.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G0C1E-EV/Applications/USB-PD/USBPD_SOURCE_HID STM32CubeIDE-warnings.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Warnings generated using the new GCC version 9.3.1 (along with CubeIDE v1.6.0).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Duplicate <span class="citation" data-cites="par">@par</span> Keywords tag in readme file for FatFs_uSD_Standalone example.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[RCC][G0] Wrong systick configuration and HAL delay with MX generate code.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[G0]USBPD : Error with Timer Service Source when TIM4 till TIM20 are configured.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[USBPD][G0] Few updates in FTL files to allow adding more user code.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[I2C] G0 - “stm32g0xx.h” inclusion should be removed from I2C template.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RTC : RTC output should be disabled when tamper is activated.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[LL SPI Example] Clears DMA global flag GIFx which is not inline with errata 2.3.1.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Remove the include “cmsis_os.h” from g0xx_it.c from FreeRTOS applications.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LPTIM_ConfigClock function call to be added.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[G0] TIM LL/HAL : Break and Dead time Extra code generated in MX_TIMx_Init() function.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[Templates] Migrate to default ARM compiler 6 in MDK-ARM Templates projects.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="warning-1"><strong>Warning</strong></h3>
+<p>For applications using device connected on CN7 (Type-C connector on MB1352):</p>
+<ul>
+<li><p>When the power source jumper JP24 is configured to D5V position (with this configuration the mother board is powered from the daughter board), there is no risk to get an over voltage on USB Vbus connector CN7.</p></li>
+<li><p>When the ST-Link is used as power source there is a risk to get an over voltage in connector. In such power configuration, software safety protection is required to detect the overvoltage.</p>
+<p>Please refer to /* SAFETY PROTECTION CODE BEGIN */ section in main.c of USB_Host applications.</p></li>
+</ul>
+<h2 id="contents-1">Contents</h2>
+<p><strong>STM32G0C1E-EV</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Examples_LL</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NUCLEO-G0B1RE</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>NUCLEO-G070RB</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>NUCLEO-G071RB</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>STM32G071B-DISCO</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>STM32G081B-EVAL</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>STM32G0316-DISCO</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>NUCLEO-G031K8</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-1">Known Limitations</h2>
+<ul>
+<li>A few applications on STM32G0C1E-EV projects are not available at CubeMx format (with .ioc)</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Device</th>
+<th style="text-align: left;">Patch(if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V8.50.6</td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+<td style="text-align: left;"><a href="./Utilities/PC_Software/EWARMv8_STM32G0Bx_V0.2.zip">Patch EWARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V8.50.6</td>
+<td style="text-align: left;">G061xx/51xx/50xx</td>
+<td style="text-align: left;"><a href="./Utilities/PC_Software/EWARMv8_STM32G05x_V0.2.zip">Patch EWARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.31</td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+<td style="text-align: left;"><a href="./Utilities/PC_Software/Keil.STM32G0Bx_DFP.0.0.2.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.31</td>
+<td style="text-align: left;">G061xx/51xx/50xx</td>
+<td style="text-align: left;"><a href="./Utilities/PC_Software/Keil.STM32G05x_DFP.0.0.2.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE</td>
+<td>V1.7.0</td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-devices-and-boards-1">Supported Devices and boards</h2>
+<ul>
+<li>STM32G041xx, STM32G031xx and STM32G030xx devices</li>
+<li>STM32G081xx, STM32G071xx and STM32G070xx devices</li>
+<li>STM32G0C1xx, STM32G0B1xx and STM32G0B0xx devices</li>
+<li>STM32G0B1RE Nucleo kit (MB1360 C-01)</li>
+<li>STM32G071RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G070RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G0C1E Evaluation board RevA (MB1581 A-01)</li>
+<li>STM32G081B Evaluation board RevB (MB1350 B-01)</li>
+<li>STM32G081B/<strong>STM32G0B1RE</strong> Legacy daughter board RevA (MB1351 A-01)</li>
+<li>STM32G081B USBPD daughter board RevC (MB1352 C-01)</li>
+<li>STM32G071B Discovery kit RevC (MB1378 C-01)</li>
+<li>STM32G031K8 Nucleo32 kit (MB1455)</li>
+<li>STM32G0316 Discovery kit (MB1454)</li>
+</ul>
+<h2 id="backward-compatibility-1">Backward Compatibility</h2>
+<p>This release is compatible with the previous versions</p>
+<h2 id="dependencies-1">Dependencies</h2>
+<p>This projects release is compatible with:</p>
+<ul>
+<li>STM32CubeMX V6.3.0</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section5" aria-hidden="true"> <label for="collapse-section5" aria-hidden="true">V1.4.0 / 03-November-2020</label>
+<div>
+<h2 id="main-changes-5">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update-1">Maintenance release and Product Update</h3>
+<p>Official Release of STM32CubeG0 Firmware projects introducing <strong>STM32G0C1xx/B1xx/B0xx</strong> devices.</p>
+<p>Maintenance release of STM32CubeG0 (STM32Cube for STM32G0 Series) Firmware projects supporting STM32G041xx/31xx/30xx and STM32G081xx/71xx/70xx devices.</p>
+<p>In the STM32CubeG0 MCU Package, examples and applications projects are generated with the STM32CubeMX tool to initialize the system, peripherals and middleware stacks. User can open the provided ioc file in STM32CubeMX to modify the settings, add additional peripherals and/or middleware, to build his final application.</p>
+<p><strong>New FW examples</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G0B1RE: add templates, examples, applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G0C1E-EV: add templates, examples, applications, demonstration</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[STM32G081B-EVAL] Add I2C_EEPROM (legacy format) to the STM32G081B-EVAL examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[STM32G081B-EVAL] Missing CRYPT AES CCM example on STM32G081 EVAL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[STM32G081B-EVAL] Add CRYP_AESModes_Suspension and CRYP_GCM_Suspension examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Add STM32CubeIDE projects and remove SW4STM32 projects</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fixed bugs list</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Correction in STM32G081B-EVAL_Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G071B-DISCO_Demonstrations Change output (.hex) relative path for DISCO binary generation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Correct STM32G081B-EVAL_Examples_CRYP_Readme</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Correct STM32G081B-EVAL_Examples_CEC_CEC_ListenMode_Device_Readme</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Correct STM32G081B-EVAL_Examples_BSP_BSP_Example-CubeIDE-warnings</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Correct NUCLEO-G0_Examples_I2C_I2C_TwoBoards_RestartAdvComIT_Readme</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Correct NUCLEO-G070RB_Examples_I2C_I2C_TwoBoards_RestartAdvComIT_Update main.c “Semihosting Test”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Correct NUCLEO-G070RB_Examples_LL_I2C_I2C_OneBoard_Communication_IT_Readme</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Correct NUCLEO-G070RB_Examples_LL_SPI_SPI_OneBoard_HalfDuplex_IT_Readme</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Correct STM32G081B-EVAL_Examples_UART_UART_Printf Readme</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[UC5] Improve Pdsc generation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[UCPD applications] Remove TX processing task</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[CubeMx v6.1.0] Updates examples, applications using latest CubeMX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[Codespell] Correct misspelled words in FW examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[FOSS-Audit] Change CMSIS license headers from BSD-3 to Apache 2.0 in FW projects</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[USBPD] Integrate USB-PD stack v3.1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[USBPD] Update the CPU clock to 64Mhz</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[FreeRTOS application] FreeRTOS apps regeneration using CubeMx + PG</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[FatFs_uSD_Standalone] Application regeneration using CubeMx and PG</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[Examples_LL] LL_SYSCFG_DisableDBATT should be added in LL examples (w/o ioc update)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G0 I2C examples: Align the I2C DeInit pins code with CubeMX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[FW Package] File Readme.md shall be renamed README.md with capital letters</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G0 - LPRUN example is not optimized</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[USBPD]PDO management not correct when GUI is enabled</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[USBPD]_GUI_INTERFACE should be disabled</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[USBPD] Explicit_Contract information not properly sent to UCPD Monitor on DETACH</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G0 - LPRUN example is not optimized</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bad RTC accuracy in demo projects due to prescaler using LSI setting instead of LSE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[I2C LL examples] Unused EXTERNAL_PULL_UP_AVAILABLE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[ALL][GCC] G0 GCC startup file should use cortex M0+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[STM32G071B-DISCO][Demonstration] Refresh LCD in case of new capabilities received by Disco</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[FW][CubeMX] Replace all board name by board=custom</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[STM32G071B-DISCO][Demonstration] Instabilities with DISCO-G0 when request changing voltage</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[NUCLEO-G07xRB_MIX2C2C_OneBoard_ComSlave7_10bits_IT] Wrong Readme</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[NUCLEO-G07xRB] Change LL example polarity for automatic testing</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[NUCLEO-G0xx][LL LPTIM] MDK-ARM link issue after adding of new API LL_LPTIM_Disable()</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[STM32G081B-EVAL][Demonstration]__HAL_FLASH_CLEAR_FLAG() replaced by clear of FLAHSH-&gt;SR register</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[PWR][Examples] HAL_PWR_PVD_Falling/rising_Callback() API update in HAL PWR_PVD FW examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[FW Package] Headers shall be added to the binary demo-related "readme.txt" files</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[STM32G081B-EVAL][USBPD Applications] Hard reset sent with Application Provider on Keil</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[ALL] Use CMSIS bits definition in system_stm32g0xx.c since RCC_CFGR_SWS_* have been removed from CMSIS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="warning-2"><strong>Warning</strong></h3>
+<p>For applications using device connected on CN7 (Type-C connector on MB1352):</p>
+<ul>
+<li><p>When the power source jumper JP24 is configured to D5V position (with this configuration the mother board is powered from the daughter board), there is no risk to get an over voltage on USB Vbus connector CN7.</p></li>
+<li><p>When the ST-Link is used as power source there is a risk to get an over voltage in connector. In such power configuration, software safety protection is required to detect the overvoltage.</p>
+<p>Please refer to /* SAFETY PROTECTION CODE BEGIN */ section in main.c of USB_Host applications.</p></li>
+</ul>
+<h2 id="contents-2">Contents</h2>
+<p><strong>STM32G0C1E-EV</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Examples_LL</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0C1E-EV</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0C1E-EV\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NUCLEO-G0B1RE</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G0B1RE</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G0B1RE\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>NUCLEO-G070RB</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>NUCLEO-G071RB</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>STM32G071B-DISCO</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>STM32G081B-EVAL</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>STM32G0316-DISCO</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>NUCLEO-G031K8</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-2">Known Limitations</h2>
+<ul>
+<li>A few applications on STM32G0C1E-EV projects are not available at CubeMx format (with .ioc)</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-4">Development Toolchains and Compilers</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Device</th>
+<th style="text-align: left;">Patch(if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V8.30.1</td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+<td style="text-align: left;"><a href="./Utilities/PC_Software/EWARMv8_STM32G0Bx_V0.2.zip">Patch EWARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IAR Embedded Workbench for ARM (EWARM)</td>
+<td>V8.30.1</td>
+<td style="text-align: left;">G061xx/51xx/50xx</td>
+<td style="text-align: left;"><a href="./Utilities/PC_Software/EWARMv8_STM32G05x_V0.2.zip">Patch EWARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.29</td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+<td style="text-align: left;"><a href="./Utilities/PC_Software/Keil.STM32G0Bx_DFP.0.0.2.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RealView Microcontroller Development Kit (MDK-ARM)</td>
+<td>V5.29</td>
+<td style="text-align: left;">G061xx/51xx/50xx</td>
+<td style="text-align: left;"><a href="./Utilities/PC_Software/Keil.STM32G05x_DFP.0.0.2.zip">Patch MDK-ARM</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeIDE</td>
+<td>V1.5.0</td>
+<td style="text-align: left;">G0C1xx/B1xx/B0xx</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-devices-and-boards-2">Supported Devices and boards</h2>
+<ul>
+<li>STM32G041xx, STM32G031xx and STM32G030xx devices</li>
+<li>STM32G081xx, STM32G071xx and STM32G070xx devices</li>
+<li><strong>STM32G0C1xx, STM32G0B1xx and STM32G0B0xx devices</strong></li>
+<li><strong>STM32G0B1RE Nucleo kit (MB1360 C-01)</strong></li>
+<li>STM32G071RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G070RB Nucleo kit RevC (MB1360 C-01)</li>
+<li><strong>STM32G0C1E Evaluation board RevA (MB1581 A-01)</strong></li>
+<li>STM32G081B Evaluation board RevB (MB1350 B-01)</li>
+<li>STM32G081B/<strong>STM32G0B1RE</strong> Legacy daughter board RevA (MB1351 A-01)</li>
+<li>STM32G081B USBPD daughter board RevC (MB1352 C-01)</li>
+<li>STM32G071B Discovery kit RevC (MB1378 C-01)</li>
+<li>STM32G031K8 Nucleo32 kit (MB1455)</li>
+<li>STM32G0316 Discovery kit (MB1454)</li>
+</ul>
+<h2 id="backward-compatibility-2">Backward Compatibility</h2>
+<p>This release is compatible with the previous versions</p>
+<h2 id="dependencies-2">Dependencies</h2>
+<p>This projects release is compatible with:</p>
+<ul>
+<li>STM32CubeMX V6.1.0</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section4" aria-hidden="true"> <label for="collapse-section4" aria-hidden="true">V1.3.0 / 25-June-2019</label>
+<div>
+<h2 id="main-changes-6">Main Changes</h2>
+<h3 id="maintenance-release-1">Maintenance release</h3>
+<p>Maintenance release of STM32CubeG0 (STM32Cube for STM32G0 Series) Firmware projects supporting STM32G041xx/31xx/30xx and STM32G081xx/71xx/70xx devices</p>
+<p>In the STM32CubeG0 MCU Package, examples and applications projects are generated with the STM32CubeMX tool to initialize the system, peripherals and middleware stacks. User can open the provided ioc file in STM32CubeMX to modify the settings, add additional peripherals and/or middleware, to build his final application.</p>
+<p><strong>Additional features</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Update FatFS applications and demonstrations to align with new FatFs middleware version and BSP board driver</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Update UCPD applications and demonstrations to align with new UCPD middleware and new Utilities version</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fixed bugs list</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">[NUCLEO-G031K8] Example I2C: Align clock configuration with the STM32CubeMX generated code</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[NUCLEO-G031K8] Example LL I2C_OneBoard_Communication_PollingAndIT_Init: Correct build error after STM32CubeMX regeneration (double definition of I2C1_IRQHandler())</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[NUCLEO-G031K8] Example LL RCC_UseHSI_PLLasSystemClock: Remove Unwanted NVIC_PRIORITYGROUP_x definition in main.h</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[NUCLEO-G071RB] Example ADC MIX: Correct compilation issue with WAVEFORM_VOLTAGE_GENERATION_FOR_TEST with STM32CubeMX generation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[NUCLEO-G071RB] Example LL DAC_GenerateConstantSignal_TriggerSW_LP_Init,TIM_DMA_Init: Remove Unwanted NVIC_PRIORITYGROUP_x definition in main.h</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[NUCLEO-G070RB] Example LL SPI_OneBoard_HalfDuplex_IT_Init: Remove Unwanted NVIC_PRIORITYGROUP_x definition in main.h</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contents-3">Contents</h2>
+<p><strong>NUCLEO-G070RB</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;">Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;">Templates</td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;">LL Templates</td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NUCLEO-G071RB</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;">Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;">Templates</td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;">LL Templates</td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>STM32G071B-DISCO</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32G071B-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G071B-DISCO</td>
+<td style="text-align: left;">Examples</td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G071B-DISCO</td>
+<td style="text-align: left;">LL Examples</td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G071B-DISCO</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G071B-DISCO</td>
+<td style="text-align: left;">Templates</td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G071B-DISCO</td>
+<td style="text-align: left;">LL Templates</td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>STM32G081B-EVAL</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;">Templates</td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;">LL Templates</td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>STM32G0316-DISCO</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32G0316-DISCO</td>
+<td style="text-align: left;">Applications</td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G0316-DISCO</td>
+<td style="text-align: left;">Demonstrations</td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G0316-DISCO</td>
+<td style="text-align: left;">Examples</td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G0316-DISCO</td>
+<td style="text-align: left;">Templates</td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G0316-DISCO</td>
+<td style="text-align: left;">LL Templates</td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NUCLEO-G031K8</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G031K8</td>
+<td style="text-align: left;">Applications</td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G031K8</td>
+<td style="text-align: left;">Demonstrations</td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G031K8</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G031K8</td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G031K8</td>
+<td style="text-align: left;">MIX Examples</td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G031K8</td>
+<td style="text-align: left;">Templates</td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G031K8</td>
+<td style="text-align: left;">LL Templates</td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the tables above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-3">Known Limitations</h2>
+<h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.20.2 + ST-Link</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.25 + ST-Link</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.7.2 + ST-Link</li>
+</ul>
+<h2 id="supported-devices-and-boards-3">Supported Devices and boards</h2>
+<ul>
+<li>STM32G041xx, STM32G031xx and STM32G030xx devices</li>
+<li>STM32G081xx, STM32G071xx and STM32G070xx devices</li>
+<li>STM32G071RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G070RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G081B Evaluation board RevB (MB1350 B-01)</li>
+<li>STM32G081B Legacy daughter board RevA (MB1351 A-01)</li>
+<li>STM32G081B UCPD daughter board RevC (MB1352 C-01)</li>
+<li>STM32G071B Discovery kit RevC (MB1378 C-01)</li>
+<li>STM32G031K8 Nucleo32 kit (MB1455)</li>
+<li>STM32G0316 Discovery kit (MB1454)</li>
+</ul>
+<h2 id="backward-compatibility-3">Backward Compatibility</h2>
+<p>This release is compatible with the previous versions</p>
+<h2 id="dependencies-3">Dependencies</h2>
+<p>This projects release is compatible with:</p>
+<ul>
+<li>STM32CubeMX V5.3.0</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section3" aria-hidden="true"> <label for="collapse-section3" aria-hidden="true">V1.2.0 / 05-April-2019</label>
+<div>
+<h2 id="main-changes-7">Main Changes</h2>
+<h3 id="maintenance-release-and-product-update-2">Maintenance release and product Update</h3>
+<p>First Official release of STM32CubeG0 (STM32Cube for STM32G0 Series) Firmware projects supporting <strong>STM32G041xx/31xx/30xx</strong> devices and introducing new <strong>STM32G0316-DISCO</strong> and <strong>NUCLEO-G031K8</strong> boards.</p>
+<p>Maintenance release of STM32CubeG0 (STM32Cube for STM32G0 Series) Firmware projects supporting <strong>STM32G081xx/71xx/70xx</strong> devices</p>
+<p>In the STM32CubeG0 MCU Package, examples and applications projects are generated with the STM32CubeMX tool to initialize the system, peripherals and middleware stacks. User can open the provided ioc file in STM32CubeMX to modify the settings, add additional peripherals and/or middleware, to build his final application.</p>
+<p><strong>Additional features</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">New Firmware examples, applications &amp; demo on <strong>NUCLEO-G031K8</strong> and <strong>STM32G0316-DISCO</strong> boards</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Firmware examples updated with STM32CubeMx <strong>v5.2.0</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fixed bugs list</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">[USART Examples_LL] USART_WakeUpFromStop_Init : Add missing call to LL_PWR_SetPowerMode(LL_PWR_MODE_STOP0) in EnterSTOP0Mode() and Update SystemClock_Config() to HSI@16MHz instead PLL(HSI)<span class="citation" data-cites="64MHz">@64MHz</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[LL] Remove unwanted NVIC_PRIORITYGROUP_x definition in main.h</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[Demonstrations] Correct wrong decoding of SRC capabilities PDO on SNK in DemoUCPD</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[Applications] Correct Linux compilation warning in USB-PD_Provider_1port application</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[RTC Examples] Correction of constants RTC_XXXX_PREDIV (in case RTC is clocked by LSI)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[I2C Examples] Improve Error case management in case of AF errors: In case of an NACK is received during process, error should not be managed as an error but as a retry to communicate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[Examples] Suppress TASKING notion from Cortex HAL examples</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contents-4">Contents</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G031K8</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G031K8\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G0316-DISCO</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G0316-DISCO\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G071B-DISCO</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G071B-DISCO</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G071B-DISCO</td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G071B-DISCO</td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G071B-DISCO</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G071B-DISCO</td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the table above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-4">Known Limitations</h2>
+<ul>
+<li>SW4STM32 project is not provided for STM32G081B-EVAL UCPD demonstration in relocate mode</li>
+<li>SW4STM32 and MDK-ARM projects are not provided for STM32G081B-EVAL CRYP_DMA examples</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.20.2 + ST-Link</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.25 + ST-Link</li>
+<li>System Workbench for STM32 (SW4STM32) toolchain V2.7.2 + ST-Link</li>
+</ul>
+<h2 id="supported-devices-and-boards-4">Supported Devices and boards</h2>
+<ul>
+<li>STM32G041xx, STM32G031xx and STM32G030xx devices</li>
+<li>STM32G081xx, STM32G071xx and STM32G070xx devices</li>
+<li>STM32G071RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G070RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G081B Evaluation board RevB (MB1350 B-01)</li>
+<li>STM32G081B Legacy daughter board RevA (MB1351 A-01)</li>
+<li>STM32G081B UCPD daughter board RevC (MB1352 C-01)</li>
+<li>STM32G071B Discovery kit RevC (MB1378 C-01)</li>
+<li><strong>STM32G031K8 Nucleo32 kit (MB1455)</strong></li>
+<li><strong>STM32G0316 Discovery kit (MB1454)</strong></li>
+</ul>
+<h2 id="backward-compatibility-4">Backward Compatibility</h2>
+<p>This release is compatible with the previous versions</p>
+<h2 id="dependencies-4">Dependencies</h2>
+<p>This projects release is compatible with:</p>
+<ul>
+<li>STM32CubeMX V5.2.0</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section2" aria-hidden="true"> <label for="collapse-section2" aria-hidden="true">V1.1.0 / 06-February-2019</label>
+<div>
+<h2 id="main-changes-8">Main Changes</h2>
+<h3 id="maintenance-release-2">Maintenance release</h3>
+<p>Official release of STM32CubeG0 (STM32Cube for STM32G0 Series) supporting STM32G081xx/71xx/70xx devices and introducing new <strong>STM32G071-DISCO</strong> board, designed to highlight <strong>USBPD features</strong>.</p>
+<p>NUCLEO-G071RB, NUCLEO-G070RB and STM32G081B-EVAL completed with new examples in STM32CubeMx format.</p>
+<p>In the STM32CubeG0 MCU Package, examples and applications projects are generated with the STM32CubeMX tool to initialize the system, peripherals and middleware stacks. User can open the provided ioc file in STM32CubeMX to modify the settings, add additional peripherals and/or middleware, to build his final application.</p>
+<p><strong>Additional features</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">New Firmware examples, applications &amp; demo on <strong>STM32G071B-DISCO</strong> board</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New <strong>USBPD Consumer/Provider</strong> and <strong>FatFs_uSD_Standalone</strong> applications on STM32G081B-EVAL in STM32CubeMx format</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G071RB, NUCLEO-G070RB completed with new examples (<strong>LL_I2C, LL_USART, MIX I2C</strong>), applications (<strong>FatFs_uSD_Standalone</strong>) and demonstrations (<strong>Adafruit_LCD_1_8_SD_Joystick</strong>) in STM32CubeMx format</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Firmware examples updates with STM32CubeMx v5.1.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fixed bugs list</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">[DemoUCPD] When connect P20 to G081-EVAL board over Type -C port2,can’t enter DP mode</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[DemoUCPD] Update to manage CubeMonitor PDO update</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[DemoUCPD] Add support of PPS inside UCPD demo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[DemoUCPD] Update link with dpm conf update</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[DemoUCPD] add support of TRACER_EMB &amp; corresponding configuration file</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[DemoUCPD] Solve issue in PDO selection algo: Built RDO was containing max board Operating power instead of Operating power (built according on selected SRC PDO).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[DemoUCPD] Code alignment vs latest Core, Devices, gui_interface and tracer_emb</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[DemoUCPD] Remove line related to HAL_UCPD_MODULE_ENABLED from stm32g0xx_hal_conf.h since UCPD is an LL driver</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[DemoUCPD] Clean stm32g0xx_it.h*</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contents-5">Contents</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;">Templates</td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G070RB</td>
+<td style="text-align: left;">LL Templates</td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;">Templates</td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-G071RB</td>
+<td style="text-align: left;">LL Templates</td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G071B-DISCO\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G071B-DISCO</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects32G071B-DISCO\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;">Templates</td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32G081B-EVAL</td>
+<td style="text-align: left;">LL Templates</td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the table above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-5">Known limitations</h2>
+<ul>
+<li>SW4STM32 project is not provided for STM32G081B-EVAL UCPD demonstration in relocate mode</li>
+<li>SW4STM32 and MDK-ARM projects are not provided for STM32G081B-EVAL CRYP_DMA examples</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.20.2 + ST-Link</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.25</li>
+<li>System Workbench STM32 (SW4STM32) toolchain V2.5</li>
+</ul>
+<h2 id="supported-devices-and-boards-5">Supported Devices and boards</h2>
+<ul>
+<li>STM32G081xx devices RevB</li>
+<li>STM32G071xx devices RevB</li>
+<li>STM32G070xx devices RevB</li>
+<li>STM32G071RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G070RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G081B Evaluation board RevB (MB1350 B-01)</li>
+<li>STM32G081B Legacy daughter board RevA (MB1351 A-01)</li>
+<li>STM32G081B UCPD daughter board RevC (MB1352 C-01)</li>
+<li><strong>STM32G071B Discovery kit RevC (MB1378 C-01</strong>)</li>
+</ul>
+<h2 id="backward-compatibility-5">Backward compatibility</h2>
+<p>This release is compatible with the previous versions</p>
+<h2 id="dependencies-5">Dependencies</h2>
+<p>This software release is compatible with:</p>
+<ul>
+<li>STM32CubeMX V5.1.x</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1" aria-hidden="true"> <label for="collapse-section1" aria-hidden="true">V1.0.0 / 26-October-2018</label>
+<div>
+<h2 id="main-changes-9">Main Changes</h2>
+<h3 id="first-release">First release</h3>
+<p>First release of STM32CubeG0 (STM32Cube for STM32G0 Series) projects supporting <strong>STM32G081xx/71xx/70xx devices</strong></p>
+<p>In the STM32CubeG0 MCU Package, most of the examples and applications projects are generated with the STM32CubeMX tool to initialize the system, peripherals and middleware stacks. User can open the provided ioc file in STM32CubeMX to modify the settings, add additional peripherals and/or middleware, to build his final application.</p>
+<p><strong>Additional features</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Firmware examples, applications &amp; demo on STM32G081B-EVAL, NUCLEO-G070RB and NUCLEO-G071RB boards, generated with STM32CubeMX.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contents-6">Contents</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board</th>
+<th style="text-align: left;">Project category</th>
+<th style="text-align: left;">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Examples_MIX</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G070RB</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G070RB\Templates_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Applications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Demonstrations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>LL Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_LL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>MIX Examples</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Examples_MIX</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>NUCLEO-G071RB</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\NUCLEO-G071RB\Templates_LL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Applications</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Demonstrations</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Demonstrations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Examples</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>STM32G081B-EVAL</strong></td>
+<td style="text-align: left;"><strong>LL Templates</strong></td>
+<td style="text-align: left;">Projects\STM32G081B-EVAL\Templates_LL</td>
+</tr>
+</tbody>
+</table>
+<p>Note: in the table above, project categories <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-6">Known limitations</h2>
+<ul>
+<li>SW4STM32 project is not provided for STM32G081B-EVAL UCPD demonstration in relocate mode</li>
+<li>SW4STM32 and MDK-ARM projects are not provided for STM32G081B-EVAL CRYP_DMA examples</li>
+<li>FatFs applications generated with CubeMx not yet available</li>
+<li>USB PD applications generated with CubeMx not yet available</li>
+</ul>
+<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.20.2+ ST-Link</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.25</li>
+<li>System Workbench STM32 (SW4STM32) toolchain V2.5</li>
+</ul>
+<h2 id="supported-devices-and-eval-boards">Supported Devices and EVAL boards</h2>
+<ul>
+<li>STM32G081xx devices RevB</li>
+<li>STM32G071xx devices RevB</li>
+<li>STM32G070xx devices RevB</li>
+<li>STM32G071RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G070RB Nucleo kit RevC (MB1360 C-01)</li>
+<li>STM32G081B Evaluation board RevB (MB1350 B-01)</li>
+<li>STM32G081B Legacy daughter board RevA (MB1351 A-01)</li>
+<li>STM32G081B UCPD daughter board RevC (MB1352 C-01)</li>
+</ul>
+<h2 id="dependencies-6">Dependencies</h2>
+<p>This software release is compatible with:</p>
+<ul>
+<li>STM32CubeMX V5.0.x</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="sticky">
+<p>For complete documentation on STM32G0xx,visit: [<a href="http://www.st.com/stm32g0">www.st.com/stm32g0</a>]</p>
+<em>This release note uses up to date web standards and, for this reason, should not be opened with Internet Explorer but preferably with popular browsers such as Google Chrome, Mozilla Firefox, Opera or Microsoft Edge.</em>
+</footer>
+</body>
+</html>
