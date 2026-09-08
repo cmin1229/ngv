@@ -1,5 +1,5 @@
 Application/User/stm32g0xx_it.o: \
- E:/files/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_IOToggle/Src/stm32g0xx_it.c \
+ C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_IOToggle/Src/stm32g0xx_it.c \
  ../../Inc/main.h \
  ../../../../../../../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h \
  ../../Inc/stm32g0xx_hal_conf.h \

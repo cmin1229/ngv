@@ -1,0 +1,9 @@
+../Drivers/BSP/STM32G0xx_Nucleo/stm32g0xx_nucleo.c:142:10:BSP_GetVersion	8	static
+../Drivers/BSP/STM32G0xx_Nucleo/stm32g0xx_nucleo.c:161:6:BSP_LED_Init	40	static
+../Drivers/BSP/STM32G0xx_Nucleo/stm32g0xx_nucleo.c:185:6:BSP_LED_DeInit	40	static
+../Drivers/BSP/STM32G0xx_Nucleo/stm32g0xx_nucleo.c:204:6:BSP_LED_On	16	static
+../Drivers/BSP/STM32G0xx_Nucleo/stm32g0xx_nucleo.c:216:6:BSP_LED_Off	16	static
+../Drivers/BSP/STM32G0xx_Nucleo/stm32g0xx_nucleo.c:228:6:BSP_LED_Toggle	16	static
+../Drivers/BSP/STM32G0xx_Nucleo/stm32g0xx_nucleo.c:252:6:BSP_PB_Init	40	static
+../Drivers/BSP/STM32G0xx_Nucleo/stm32g0xx_nucleo.c:291:6:BSP_PB_DeInit	48	static
+../Drivers/BSP/STM32G0xx_Nucleo/stm32g0xx_nucleo.c:306:10:BSP_PB_GetState	16	static

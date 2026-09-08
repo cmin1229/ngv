@@ -1,5 +1,5 @@
 Drivers/CMSIS/system_stm32g0xx.o: \
- E:/files/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_IOToggle/Src/system_stm32g0xx.c \
+ C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_IOToggle/Src/system_stm32g0xx.c \
  ../../../../../../../Drivers/CMSIS/Include/stm32g0xx.h \
  ../../../../../../../Drivers/CMSIS/Include/stm32g0b1xx.h \
  ../../../../../../../Drivers/CMSIS/Include/core_cm0plus.h \

@@ -62,8 +62,8 @@ all: main-build
 main-build: GPIO_IOToggle.elf secondary-outputs
 
 # Tool invocations
-GPIO_IOToggle.elf GPIO_IOToggle.map: $(OBJS) $(USER_OBJS) E:\files\STM32CubeG0-master\STM32CubeG0-master\Projects\NUCLEO-G0B1RE\Examples\GPIO\GPIO_IOToggle\STM32CubeIDE\STM32G0B1RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "GPIO_IOToggle.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"E:\files\STM32CubeG0-master\STM32CubeG0-master\Projects\NUCLEO-G0B1RE\Examples\GPIO\GPIO_IOToggle\STM32CubeIDE\STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GPIO_IOToggle.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+GPIO_IOToggle.elf GPIO_IOToggle.map: $(OBJS) $(USER_OBJS) C:\Temp\Development\ngv\ngv\STM32CubeG0-master\STM32CubeG0-master\Projects\NUCLEO-G0B1RE\Examples\GPIO\GPIO_IOToggle\STM32CubeIDE\STM32G0B1RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "GPIO_IOToggle.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Temp\Development\ngv\ngv\STM32CubeG0-master\STM32CubeG0-master\Projects\NUCLEO-G0B1RE\Examples\GPIO\GPIO_IOToggle\STM32CubeIDE\STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GPIO_IOToggle.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
