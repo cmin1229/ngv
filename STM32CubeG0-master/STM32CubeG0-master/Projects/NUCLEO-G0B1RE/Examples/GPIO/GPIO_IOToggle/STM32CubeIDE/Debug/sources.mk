@@ -27,4 +27,5 @@ Application/User \
 Drivers/BSP/STM32G0xx_Nucleo \
 Drivers/CMSIS \
 Drivers/STM32G0xx_HAL_Driver \
+. \
 

@@ -14,6 +14,7 @@ RM := rm -rf
 -include Drivers/BSP/STM32G0xx_Nucleo/subdir.mk
 -include Application/User/subdir.mk
 -include Application/Startup/subdir.mk
+-include subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
