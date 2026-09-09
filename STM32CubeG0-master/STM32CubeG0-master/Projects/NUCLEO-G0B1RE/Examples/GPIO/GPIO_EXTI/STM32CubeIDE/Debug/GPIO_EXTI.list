@@ -548,8 +548,6 @@ static void EXTI4_15_IRQHandler_Config(void)
  8000364:	2284      	movs	r2, #132	@ 0x84
  8000366:	0392      	lsls	r2, r2, #14
  8000368:	605a      	str	r2, [r3, #4]
-
-
   GPIO_InitStructure.Pull = GPIO_PULLUP;
  800036a:	1d3b      	adds	r3, r7, #4
  800036c:	2201      	movs	r2, #1

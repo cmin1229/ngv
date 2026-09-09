@@ -176,8 +176,6 @@ static void EXTI4_15_IRQHandler_Config(void)
 
   /* Configure PC.13 pin as input floating */
   GPIO_InitStructure.Mode = GPIO_MODE_IT_FALLING;
-
-
   GPIO_InitStructure.Pull = GPIO_PULLUP;
   GPIO_InitStructure.Pin = USER_BUTTON_PIN;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStructure);

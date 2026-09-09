@@ -21,13 +21,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-
-
-static GPIO_InitTypeDef GPIO_InitStruct;
-static __IO uint32_t lastButtonTick = 0;
-#define DEBOUNCE_TIME_MS 200U
-
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -58,61 +51,21 @@ static GPIO_InitTypeDef  GPIO_InitStruct;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+static void EXTI4_15_IRQHandler_Config(void);
 /* USER CODE END PFP */
+/* USER CODE END PFP */
+
+
+
+void EXTI4_15_IRQHandler(void){
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
+}
+
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
-
-void EXTI2_3_IRQHandler(void)
-{
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
-}
-
-/**
-  * @brief GPIO EXTI callback called by HAL_GPIO_EXTI_IRQHandler().
-  */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-  if (GPIO_Pin == GPIO_PIN_3)
-  {
-    uint32_t now = HAL_GetTick();
-
-    /* Simple non-blocking debounce: do not use HAL_Delay() inside ISR/callback. */
-    if ((now - lastButtonTick) >= 1000)
-    {
-      lastButtonTick = now;
-      HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-    }
-  }
-}
-
-
-static void EXTI2_3_IRQHandler_Config(void)
-{
-  GPIO_InitTypeDef   GPIO_InitStructure;
-
-
-  /* Enable GPIOC clock */
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-
-  /* Configure PC.13 pin as input floating */
-  GPIO_InitStructure.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStructure.Pull = GPIO_PULLUP;
-  GPIO_InitStructure.Pin = GPIO_PIN_3;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
-
-
-  /* Enable and set line 4_15 Interrupt to the lowest priority */
-  HAL_NVIC_SetPriority(EXTI2_3_IRQn, 2, 0);
-  HAL_NVIC_EnableIRQ(EXTI2_3_IRQn);
-
-
-}
-
-
 
 /**
   * @brief  The application entry point.
@@ -155,6 +108,9 @@ int main(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
+  /* -2- Configure EXTI_Line4_15 (connected to PC.13 pin) in interrupt mode */
+  EXTI4_15_IRQHandler_Config();
+
 
   /* -2- Configure IO in output push-pull mode to drive external LEDs */
   GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
@@ -170,16 +126,13 @@ int main(void)
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 
-  EXTI2_3_IRQHandler_Config();
-
   while (1)
   {
-	  /*
-
+/*
 	   if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == GPIO_PIN_RESET)
 	    {
 
-			//USER CODE BEGIN 3
+			// USER CODE BEGIN 3
 			HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 			// Insert delay 100 ms
 			HAL_Delay(200);
@@ -234,6 +187,51 @@ void SystemClock_Config(void)
     Error_Handler();
   }
 }
+
+
+
+
+/* USER CODE BEGIN 4 */
+/**
+  * @brief  Configures EXTI line 4_15 (connected to PC.13 pin) in interrupt mode
+  * @param  None
+  * @retval None
+  */
+static void EXTI4_15_IRQHandler_Config(void)
+{
+  GPIO_InitTypeDef   GPIO_InitStructure;
+
+
+  /* Enable GPIOC clock */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+
+  /* Configure PC.13 pin as input floating */
+  GPIO_InitStructure.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStructure.Pull = GPIO_PULLUP;
+  GPIO_InitStructure.Pin = USER_BUTTON_PIN;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+
+  /* Enable and set line 4_15 Interrupt to the lowest priority */
+  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 2, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
+}
+
+
+/**
+  * @brief EXTI line detection callbacks
+  * @param GPIO_Pin: Specifies the pins connected EXTI line
+  * @retval None
+  */
+void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == USER_BUTTON_PIN)
+  {
+    /* Toggle LED4 */
+    BSP_LED_Toggle(LED4);
+  }
+}
+
 
 /* USER CODE BEGIN 4 */
 /* USER CODE END 4 */
