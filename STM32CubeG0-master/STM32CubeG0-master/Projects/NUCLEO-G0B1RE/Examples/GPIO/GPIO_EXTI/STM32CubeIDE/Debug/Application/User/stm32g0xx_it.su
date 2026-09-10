@@ -1,6 +1,0 @@
-C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_EXTI/Src/stm32g0xx_it.c:73:6:NMI_Handler	8	static
-C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_EXTI/Src/stm32g0xx_it.c:86:6:HardFault_Handler	8	static
-C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_EXTI/Src/stm32g0xx_it.c:101:6:SVC_Handler	8	static
-C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_EXTI/Src/stm32g0xx_it.c:114:6:PendSV_Handler	8	static
-C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_EXTI/Src/stm32g0xx_it.c:127:6:SysTick_Handler	8	static
-C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_EXTI/Src/stm32g0xx_it.c:151:6:EXTI4_15_IRQHandler	8	static

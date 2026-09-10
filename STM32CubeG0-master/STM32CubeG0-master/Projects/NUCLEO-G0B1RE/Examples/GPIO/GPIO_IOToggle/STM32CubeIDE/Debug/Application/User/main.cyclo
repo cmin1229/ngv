@@ -1,6 +1,0 @@
-C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_IOToggle/Src/main.c:60:6:EXTI4_15_IRQHandler	1
-C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_IOToggle/Src/main.c:74:5:main	1
-C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_IOToggle/Src/main.c:149:6:SystemClock_Config	3
-C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_IOToggle/Src/main.c:200:13:EXTI4_15_IRQHandler_Config	1
-C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_IOToggle/Src/main.c:226:6:HAL_GPIO_EXTI_Falling_Callback	2
-C:/Temp/Development/ngv/ngv/STM32CubeG0-master/STM32CubeG0-master/Projects/NUCLEO-G0B1RE/Examples/GPIO/GPIO_IOToggle/Src/main.c:243:6:Error_Handler	1

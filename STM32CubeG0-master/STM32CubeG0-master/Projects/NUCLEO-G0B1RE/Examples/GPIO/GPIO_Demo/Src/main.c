@@ -59,7 +59,49 @@ static void EXTI4_15_IRQHandler_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+static void MX_ADC1_Init(void)
+{
 
+  ADC_ChannelConfTypeDef sConfig;
+
+    /**Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+    */
+  hadc1.Instance = ADC1;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV8;
+  hadc1.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc1.Init.ScanConvMode = ENABLE;
+  hadc1.Init.ContinuousConvMode = ENABLE;
+  hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc1.Init.NbrOfConversion = 2;
+  hadc1.Init.DMAContinuousRequests = ENABLE;
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+    /**Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+    */
+  sConfig.Channel = ADC_CHANNEL_2;
+  sConfig.Rank = 1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+    /**Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+    */
+  sConfig.Channel = ADC_CHANNEL_3;
+  sConfig.Rank = 2;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
 /* USER CODE END 0 */
 
 /**
@@ -68,6 +110,10 @@ static void EXTI4_15_IRQHandler_Config(void);
   */
 int main(void)
 {
+
+	uint32_t adcValue = 0;
+	float voltage = 0.0f;
+
 
   /* USER CODE BEGIN 1 */
   /* STM32G0xx HAL library initialization:
@@ -93,6 +139,10 @@ int main(void)
   /* Configure the system clock */
   SystemClock_Config();
 
+
+
+  MX_ADC1_Init();
+
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
@@ -116,6 +166,19 @@ int main(void)
   /* USER CODE BEGIN 3 */
   BSP_LED_Toggle(LED4);
   HAL_Delay(blink_interval);
+
+
+  HAL_ADC_Start(&hadc1);
+
+  if (HAL_ADC_PollForConversion(&hdac1, 10) == HAL_OK)
+  {
+
+	  adcValue = HAL_ADC_GetValue(&hadc1);
+
+
+  }
+
+
 
   }
   /* USER CODE END 3 */
